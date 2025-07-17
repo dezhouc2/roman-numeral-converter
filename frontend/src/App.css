@@ -1,0 +1,231 @@
+/* This code chunk is for react application outlook */
+
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Light mode */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --border-color: #dee2e6;
+  --button-bg: #0d6efd;
+  --button-hover: #0b5ed7;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --result-bg: #e7f3ff;
+  --result-border: #b6d7ff;
+  --roman-color: #0d6efd;
+}
+
+/* Dark mode  */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --text-primary: #ffffff;
+    --text-secondary: #adb5bd;
+    --border-color: #495057;
+    --button-bg: #0d6efd;
+    --button-hover: #3d8bfd;
+    --shadow: rgba(255, 255, 255, 0.1);
+    --result-bg: #1a2332;
+    --result-border: #375a7f;
+    --roman-color: #66b3ff;
+  }
+}
+
+/* Main container */
+.app-container {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  padding: 50px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Main content area */
+.main-content {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--bg-secondary);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--shadow);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Main title */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Input label */
+.input-label {
+  text-align: left;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-left: 0;
+}
+
+/* Input field */
+.number-input {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.number-input:focus {
+  outline: none;
+  border-color: var(--button-bg);
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+}
+
+.number-input::placeholder {
+  color: var(--text-secondary);
+}
+
+/* Convert button */
+.convert-button {
+  width: 100%;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: var(--button-bg);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.convert-button:hover:not(:disabled) {
+  background-color: var(--button-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+}
+
+.convert-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Result container */
+.result-container {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: var(--result-bg);
+  border: 2px solid var(--result-border);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Roman numeral result */
+.roman-result {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--roman-color);
+  text-align: center;
+  font-family: 'Times New Roman', serif;
+  letter-spacing: 0.1em;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 30px 20px;
+    margin: 20px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .input-label {
+    font-size: 1.1rem;
+  }
+  
+  .roman-result {
+    font-size: 1.3rem;
+  }
+}
+
+/* Smooth transition animations */
+.result-container {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ensure proper theme application across all browsers */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.result-container.error {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+/* Dark mode error styling */
+@media (prefers-color-scheme: dark) {
+  .result-container.error {
+    background-color: #2c1517;
+    border-color: #842029;
+  }
+}
+
+/* Error text styling */
+.error-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #721c24;
+  text-align: center;
+  font-family: inherit;
+}
+
+/* Dark mode error text */
+@media (prefers-color-scheme: dark) {
+  .error-text {
+    color: #ea868f;
+  }
+}
+
+/* Success result styling (Roman numeral) */
+.roman-result {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--roman-color);
+  text-align: center;
+  font-family: 'Times New Roman', serif;
+  letter-spacing: 0.1em;
+}
