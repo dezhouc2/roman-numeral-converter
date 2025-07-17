@@ -5,7 +5,7 @@ A full-stack web application that converts integers (1-3999) to Roman numerals
 
 ## Summary
 
-I built this Roman numeral converter using Express.js and React with Adobe Spectrum, choosing JavaScript over TypeScript for faster development within the assessment timeline while meeting all Adobe requirements. The solution implements a greedy algorithm based on Wikipedia's specification, includes comprehensive Jest testing, and provides full observability with logging, metrics, and tracing endpoints. The entire application is containerized with Docker for production deployment, demonstrating both clean code architecture and enterprise-ready development practices.
+I built this Roman numeral converter using Express.js and React with Adobe Spectrum, choosing JavaScript over TypeScript for faster development within the assessment timeline while meeting all Adobe requirements. The solution implements a greedy algorithm based on Wikipedia's specification, includes comprehensive Jest testing, and provides full observability with logging, metrics, and tracing endpoints. The entire application is containerized with Docker for production deployment
 
 ## ✨ Features
 - ** RESTful API **: Fast Express.js backend with Roman numeral conversion
